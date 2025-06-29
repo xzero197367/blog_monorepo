@@ -1,0 +1,6 @@
+pnpm i passport passport-jwt
+pnpm i --save-dev @types/passport-jwt
+pnpm i @nestjs/passport
+
+
+nest g gu auth/guards/jwt-auth

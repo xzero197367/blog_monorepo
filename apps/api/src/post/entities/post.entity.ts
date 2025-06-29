@@ -20,7 +20,7 @@ export class Post {
   @Field()
   content: string;
 
-  @Field(()=> Boolean)
+  @Field(() => Boolean)
   published: boolean;
 
   @Field(() => Int)
@@ -32,12 +32,12 @@ export class Post {
   @Field()
   updatedAt: Date;
 
-  @Field(()=>User)
-  author:User
+  @Field(() => User)
+  author: User;
 
   @Field(() => [Tag], { nullable: true })
-  tags?: Tag[]
+  tags?: Tag[];
 
   @Field(() => [Comment], { nullable: true })
-  comments?: Comment[]
+  comments?: Comment[];
 }

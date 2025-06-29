@@ -1,3 +1,26 @@
+-- to access .env file you should us config  package
+	pnpm i @nestjs/config
+
+-- install jwt in nestjs
+	pnpm i @nestjs/jwt
+
+
+--   openssl rand -hex 32
+
+--  node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+
+
+/// eslint.config,.prettierc  files configs
+
+-----------.prettierc
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "endOfLine": "auto"
+}
+
+--------------eslint.config.mjs
 // @ts-check
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
@@ -33,3 +56,8 @@ export default tseslint.config(
     },
   },
 );
+
+
+----------------then these commands
+npx eslint . --fix
+npx prettier --write .

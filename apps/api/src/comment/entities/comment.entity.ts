@@ -15,6 +15,4 @@ export class Comment {
 
   @Field(() => User)
   author: User;
-
-  
 }

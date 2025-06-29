@@ -14,8 +14,8 @@ export class CreateUserInput {
   password: string;
 
   @Field({ nullable: true })
-  bio?:string;
+  bio?: string;
 
   @Field({ nullable: true })
-  avatar?:string;
+  avatar?: string;
 }

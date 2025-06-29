@@ -8,11 +8,11 @@ export class Like {
   id: number;
 
   @Field(() => User)
-  user:User;
+  user: User;
 
   @Field(() => Post)
   post: Post;
 
   @Field()
-  createdAt: Date
+  createdAt: Date;
 }

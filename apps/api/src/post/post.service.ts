@@ -5,7 +5,6 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class PostService {
-
   constructor(private readonly prisma: PrismaService) {}
 
   // create(createPostInput: CreatePostInput) {

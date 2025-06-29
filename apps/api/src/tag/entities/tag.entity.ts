@@ -15,6 +15,4 @@ export class Tag {
 
   @Field(() => [User], { nullable: true })
   users?: User[];
-
-  
 }

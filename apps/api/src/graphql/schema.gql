@@ -53,9 +53,15 @@ type Like {
   createdAt: DateTime!
 }
 
+type AuthPayload {
+  id: Float!
+  name: String!
+  avatar: String
+  accessToken: String!
+}
+
 type Query {
   posts: [Post!]!
-  user(id: Int!): User!
   comment(id: Int!): Comment!
   tag(id: Int!): Tag!
   like(id: Int!): Like!
@@ -63,8 +69,6 @@ type Query {
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
-  updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: Int!): User!
   createComment(createCommentInput: CreateCommentInput!): Comment!
   updateComment(updateCommentInput: UpdateCommentInput!): Comment!
   removeComment(id: Int!): Comment!
@@ -74,17 +78,15 @@ type Mutation {
   createLike(createLikeInput: CreateLikeInput!): Like!
   updateLike(updateLikeInput: UpdateLikeInput!): Like!
   removeLike(id: Int!): Like!
+  signin(signInInput: SignInInput!): AuthPayload!
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  name: String!
+  email: String!
+  password: String!
+  bio: String
+  avatar: String
 }
 
 input CreateCommentInput {
@@ -118,4 +120,9 @@ input UpdateLikeInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
 }

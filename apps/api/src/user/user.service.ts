@@ -6,14 +6,13 @@ import { hash } from 'argon2';
 
 @Injectable()
 export class UserService {
-
-  public UserService(private prisma: PrismaService){}
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(createUserInput: CreateUserInput) {
-    const {password, ...user} = createUserInput;
+    const { password, ...user } = createUserInput;
     const hashedPassword = await hash(password);
-    return this.prisma.user.create({data: {...user, password: hashedPassword}});
+    return this.prisma.user.create({
+      data: { ...user, password: hashedPassword },
+    });
   }
-
-
 }
